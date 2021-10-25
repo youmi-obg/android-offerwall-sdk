@@ -1,4 +1,4 @@
-[中文版ReadMe](https://github.com/youmi-obg/android-offerwall-sdk/blob/main/README_cn.md)
+[中文版README](https://github.com/youmi-obg/android-offerwall-sdk/blob/main/README_cn.md)
 
 
 
