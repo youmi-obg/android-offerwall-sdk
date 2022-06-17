@@ -23,7 +23,7 @@
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
     implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
     implementation 'com.scwang.smart:refresh-header-material:2.0.3'
-    
+
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
