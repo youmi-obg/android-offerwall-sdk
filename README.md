@@ -27,7 +27,7 @@
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-
+    implementation 'androidx.work:work-runtime:2.7.1'
 If there is already the same dependency (version can be different) in your app’s dependency, it can be used normally. If not, you have to add the dependency.
 
 

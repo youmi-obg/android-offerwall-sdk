@@ -29,7 +29,7 @@
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-
+    implementation 'androidx.work:work-runtime:2.7.1'
 在app的依赖中，如果有相同的依赖（版本不同也可以）即能正常使用，如果没有需要添加上该依赖
 
 
