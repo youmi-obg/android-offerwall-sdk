@@ -26,6 +26,8 @@
     implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
     implementation 'com.scwang.smart:refresh-header-material:2.0.3'
     
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
@@ -77,9 +79,15 @@ defaultConfig {
 
 
 
-6.SDK的接入方式，在项目的Application类中的onCreate( )方法内，使用
-    YoumiOffersWallSdk.init(this,"your_aid")  
+6.SDK的接入方式，在项目的Application类中的onCreate( )方法内，
+   
+   使用 YoumiOffersWallSdk.getInstance().setOfferWallCallback { s, l ->
+         }
+   去注册本地回调，s为第三方传入的uid，l为每次完成任务成功后获取到的积分。（如果不需要本地回调可以不添加该函数）
+   
+   使用 YoumiOffersWallSdk.getInstance().init(this,"your_aid")  
     "your_aid"为你在有米官网注册成功后的渠道aid，该aid不能为空，如果为空无法正常使用SDK功能
+   
 
 ```
 class MyApplication : Application() {
@@ -87,7 +95,11 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        YoumiOffersWallSdk.init(this,"your_aid")
+        YoumiOffersWallSdk.getInstance().setOfferWallCallback { s, l ->
+          
+        }
+   
+        YoumiOffersWallSdk.getInstance().init(this,"your_aid")
     }
  }
 ```
@@ -97,12 +109,12 @@ class MyApplication : Application() {
 
 
 7.SDK广告墙的启动方式，在需要跳转到SDK的地方，添加代码
-    YoumiOffersWallSdk.startOffersWall(context，userId) 
+    YoumiOffersWallSdk.getInstance().startOffersWall(context，userId) 
     context为Context类的实例，userId为String类型，userId为该APP用户的唯一Id
 
 ```
 btn_test.setOnClickListener {
-    YoumiOffersWallSdk.startOffersWall(context,"userId")
+    YoumiOffersWallSdk.getInstance().startOffersWall(context,"userId")
 }
 ```
 
