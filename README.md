@@ -24,6 +24,8 @@ implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 implementation 'org.greenrobot:eventbus:3.1.1'
 implementation 'com.airbnb.android:lottie:3.4.0'
 
+implementation 'org.greenrobot:eventbus:3.1.1'
+
 implementation 'androidx.appcompat:appcompat:1.3.1'
 implementation 'com.google.android.material:material:1.4.0'
 implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
@@ -81,7 +83,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        YoumiOffersWallSdk.init(this,"your_aid")
+        YoumiOffersWallSdk.getInstance().init(this,"your_aid")
     }
  }
 ```
@@ -91,7 +93,7 @@ class MyApplication : Application() {
 
 ```
 btn_test.setOnClickListener {
-    YoumiOffersWallSdk.startOffersWall(context,"userId")
+    YoumiOffersWallSdk.getInstance().startOffersWall(context,"userId")
 }
 ```
 
